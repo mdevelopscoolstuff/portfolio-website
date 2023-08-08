@@ -1,0 +1,198 @@
+$color_1: #333;
+$color_2: lightsteelblue;
+$color_3: #666;
+$color_4: #fff;
+$color_5: whitesmoke;
+$font-family_1: 'Handjet', cursive;
+$font-family_2: 'Poppins', sans-serif;
+$font-family_3: 'Tektur', cursive;
+$font-family_4: 'VT323', monospace;
+
+@import "https://fonts.googleapis.com/css2?family=Handjet:wght@500&family=Poppins&family=Tektur&family=VT323&display=swap";
+@keyframes dance {
+	0%,50% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(60px);
+	}
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: $font-family_1;
+	font-family: $font-family_2;
+	font-family: $font-family_3;
+	font-family: $font-family_4;
+}
+.banner {
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	min-height: 100vh;
+	padding: 100px;
+	background: #fff;
+	transition: 0.5;
+}
+.banner.night {
+	background: #333;
+	.daynight {
+		background: #444;
+		color: $color_5;
+		ion-icon {
+			&:nth-child(2) {
+				display: block;
+			}
+		}
+	}
+	.sci {
+		li {
+			a {
+				&:hover {
+					color: $color_2;
+				}
+			}
+		}
+	}
+}
+header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: 20px 100px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	.logo {
+		color: $color_1;
+		font-size: 2em;
+		font-weight: 700;
+		text-decoration: none;
+		transition: 0.5s;
+		span {
+			color: $color_2;
+		}
+	}
+	ul {
+		display: flex;
+		gap: 40px;
+		li {
+			list-style: none;
+			a {
+				text-decoration: none;
+				font-weight: 500;
+				font-size: 1.2em;
+				color: $color_1;
+				transition: 0.5s;
+			}
+		}
+	}
+}
+.content {
+	position: relative;
+	max-width: 700px;
+	z-index: 10;
+	h3 {
+		font-size: 2em;
+		color: $color_1;
+		font-weight: 200;
+		transition: 0.5s;
+	}
+	h2 {
+		font-size: 5.5em;
+		color: $color_1;
+		font-weight: 700;
+		transition: 0.5s;
+		span {
+			color: $color_2;
+		}
+	}
+	p {
+		font-size: 1.2em;
+		color: $color_3;
+		margin: 10px 0;
+		transition: 0.5s;
+	}
+	button {
+		position: relative;
+		background: lightsteelblue;
+		color: $color_4;
+		border: none;
+		outline: none;
+		padding: 15px 35px;
+		font-size: 1.25em;
+		letter-spacing: 0.05em;
+		margin-right: 20px;
+		border-radius: 4px;
+		font-weight: 600;
+		cursor: pointer;
+		transition: 0.5s;
+	}
+}
+.sci {
+	position: inherit;
+	bottom: 30px;
+	display: flex;
+	gap: 20px;
+	li {
+		list-style: none;
+		a {
+			&:hover {
+				color: $color_2;
+			}
+		}
+	}
+}
+sci {
+	li {
+		a {
+			text-decoration: none;
+			font-size: 1.75em;
+			color: $color_1;
+		}
+	}
+}
+.daynight {
+	position: absolute;
+	bottom: 25px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 60px;
+	height: 60px;
+	background: whitesmoke;
+	border-radius: 50%;
+	color: $color_3;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	transition: 0.5s;
+	font-size: 2em;
+	ion-icon {
+		&:nth-child(2) {
+			.banner.night {
+				.daynight {
+					ion-icon {
+						&:nth-child(1) {
+							display: none;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+.image-container {
+	width: 300px;
+	height: 300px;
+	position: relative;
+	img {
+		position: inherit;
+		width: 100%;
+		height: 100%;
+		animation: dance 10s ease infinite;
+	}
+}
